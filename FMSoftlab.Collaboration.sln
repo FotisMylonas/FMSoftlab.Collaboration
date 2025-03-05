@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35506.116
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FMSoftlab.Collaboration.Mail", "FMSoftlab.Collaboration.Mail\FMSoftlab.Collaboration.Mail.csproj", "{2C5D0B05-B009-4C5E-AAFD-5F536C7C6155}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FMSoftlab.Collaboration.Mail.AzureEmailClient", "FMSoftlab.Collaboration.Mail.AzureEmailClient\FMSoftlab.Collaboration.Mail.AzureEmailClient.csproj", "{752E309C-3541-42EA-A1E4-B49F252DA1B7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FMSoftlab.Collaboration.Mail.MailKit", "FMSoftlab.Collaboration.Mail.MailKit\FMSoftlab.Collaboration.Mail.MailKit.csproj", "{012F853B-19F4-429F-A5F4-0FC2273D574F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FMSoftlab.Collaboration.Mail.SendGrid", "FMSoftlab.Collaboration.Mail.SendGrid\FMSoftlab.Collaboration.Mail.SendGrid.csproj", "{63D02AA4-A45D-4B43-8E8C-B621AFD3CBD6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FMSoftlab.Collaboration.Mail.SMTP", "FMSoftlab.Collaboration.Mail.SMTP\FMSoftlab.Collaboration.Mail.SMTP.csproj", "{EF2FF391-B972-4401-80ED-0E7372FF0D01}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2C5D0B05-B009-4C5E-AAFD-5F536C7C6155}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C5D0B05-B009-4C5E-AAFD-5F536C7C6155}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C5D0B05-B009-4C5E-AAFD-5F536C7C6155}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C5D0B05-B009-4C5E-AAFD-5F536C7C6155}.Release|Any CPU.Build.0 = Release|Any CPU
+		{752E309C-3541-42EA-A1E4-B49F252DA1B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{752E309C-3541-42EA-A1E4-B49F252DA1B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{752E309C-3541-42EA-A1E4-B49F252DA1B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{752E309C-3541-42EA-A1E4-B49F252DA1B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{012F853B-19F4-429F-A5F4-0FC2273D574F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{012F853B-19F4-429F-A5F4-0FC2273D574F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{012F853B-19F4-429F-A5F4-0FC2273D574F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{012F853B-19F4-429F-A5F4-0FC2273D574F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63D02AA4-A45D-4B43-8E8C-B621AFD3CBD6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63D02AA4-A45D-4B43-8E8C-B621AFD3CBD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63D02AA4-A45D-4B43-8E8C-B621AFD3CBD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63D02AA4-A45D-4B43-8E8C-B621AFD3CBD6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF2FF391-B972-4401-80ED-0E7372FF0D01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF2FF391-B972-4401-80ED-0E7372FF0D01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF2FF391-B972-4401-80ED-0E7372FF0D01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF2FF391-B972-4401-80ED-0E7372FF0D01}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
