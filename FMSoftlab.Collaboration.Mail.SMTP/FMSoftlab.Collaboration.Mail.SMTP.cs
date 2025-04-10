@@ -14,8 +14,6 @@ namespace FMSoftlab.Collaboration.Mail.SMTP
 
     public class SMTPMailSender : ISendMail
     {
-        //private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
-
         private readonly ILogger _log;
         private readonly SmtpClient client;
 
