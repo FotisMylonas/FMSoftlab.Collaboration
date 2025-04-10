@@ -5,8 +5,8 @@ on:
     branches: [ main ]
     tags:
       - 'v*.*.*' # Trigger only on tags like v1.0.0, v1.0.1, etc.
-  pull_request:
-    branches: [ main ]
+  #pull_request:
+   # branches: [ main ]
 
 env:
   SOLUTION_FILE: FMSoftlab.Collaboration.sln # Replace with the name of your solution file
