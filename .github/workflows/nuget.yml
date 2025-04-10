@@ -57,6 +57,12 @@ jobs:
       run: dotnet pack ${{ env.SOLUTION_FILE }} --configuration Release --no-build --output ./nupkgs
       working-directory: ${{ github.workspace }} # Ensure we're at the root
 
+    - name: Upload NuGet packages
+        uses: actions/upload-artifact@v4
+        with:
+          name: nuget-packages
+          path: ./nupkgs     
+
   publish:
     name: Publish
     needs: build
@@ -72,6 +78,12 @@ jobs:
       with:
         dotnet-version: '9.0.x' # Or your desired .NET SDK version
 
+    - name: Download NuGet packages
+      uses: actions/download-artifact@v4
+      with:
+        name: nuget-packages
+        path: ./nupkgs
+          
     - name: Push NuGet packages to NuGet.org
       run: |
         foreach ($package in Get-ChildItem -Path "./nupkgs" -Filter "*.nupkg") {
