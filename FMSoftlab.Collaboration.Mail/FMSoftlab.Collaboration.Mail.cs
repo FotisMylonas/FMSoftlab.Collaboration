@@ -202,15 +202,15 @@ namespace FMSoftlab.Collaboration.Mail
 
     public interface ISendMailAttributes
     {
-        int TenantId { get; }
-        string Subject { get; }
-        string Body { get; }
-        string FromAddress { get; }
-        string FromDisplayName { get; }
-        string SenderAddress { get; }
-        string SenderDisplayName { get; }
-        string ReplyToAddress { get; }
-        string ReplyToDisplayName { get; }
+        int TenantId { get; set; }
+        string Subject { get; set; }
+        string Body { get; set; }
+        string FromAddress { get; set; }
+        string FromDisplayName { get; set; }
+        string SenderAddress { get; set; }
+        string SenderDisplayName { get; set; }
+        string ReplyToAddress { get; set; }
+        string ReplyToDisplayName { get; set; }
         List<FMEmailAddress> ToAddresses { get; }
         List<FMEmailAddress> CcAddresses { get; }
         List<FileAttachment> Attachments { get; }
