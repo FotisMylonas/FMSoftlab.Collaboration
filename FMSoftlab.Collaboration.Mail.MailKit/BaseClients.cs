@@ -181,8 +181,8 @@ namespace FMSoftlab.Collaboration.Mail.MailKit
                 {
                     if (message.From.FirstOrDefault() is MailboxAddress addr)
                     {
-                        string blogicaMessageId = GenerateMessageId(addr.Domain);
-                        message.Headers.Add("X-BlogicaMessageId", blogicaMessageId);
+                        string fmSoftlabMessageId = GenerateMessageId(addr.Domain);
+                        message.Headers.Add("X-FMSoftlabMessageId", fmSoftlabMessageId);
                     }
                     string mailkitmessageId = message.MessageId;
                     _log?.LogDebug($"will send mailkit MessageId:{mailkitmessageId}");

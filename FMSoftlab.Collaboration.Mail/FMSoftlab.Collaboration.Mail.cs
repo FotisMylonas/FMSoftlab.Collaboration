@@ -47,6 +47,7 @@ namespace FMSoftlab.Collaboration.Mail
         public static SendMailResult SuccessWithId(string id, string message) => new SendMailResult(true, id, message);
         public static SendMailResult Failed(string message) => new SendMailResult(false, string.Empty, message);
     }
+
     public interface ISendMail
     {
         Task<SendMailResult> SendMailAsync(ISendMailAttributes sendMailAttributes);
@@ -201,15 +202,15 @@ namespace FMSoftlab.Collaboration.Mail
 
     public interface ISendMailAttributes
     {
-        int TenantId { get; set; }
-        string Subject { get; set; }
-        string Body { get; set; }
-        string FromAddress { get; set; }
-        string FromDisplayName { get; set; }
-        string SenderAddress { get; set; }
-        string SenderDisplayName { get; set; }
-        string ReplyToAddress { get; set; }
-        string ReplyToDisplayName { get; set; }
+        int TenantId { get; }
+        string Subject { get; }
+        string Body { get; }
+        string FromAddress { get; }
+        string FromDisplayName { get; }
+        string SenderAddress { get; }
+        string SenderDisplayName { get; }
+        string ReplyToAddress { get; }
+        string ReplyToDisplayName { get; }
         List<FMEmailAddress> ToAddresses { get; }
         List<FMEmailAddress> CcAddresses { get; }
         List<FileAttachment> Attachments { get; }
@@ -236,6 +237,7 @@ namespace FMSoftlab.Collaboration.Mail
         ISendMailAttributes SetRecipients(IEnumerable<FMEmailAddress> addresses);
         ISendMailAttributes SetCarbonCopyEmails(IEnumerable<FMEmailAddress> addresses);
     }
+
     public class SendMailAttributes : ISendMailAttributes
     {
         public int TenantId { get; set; }
@@ -434,7 +436,6 @@ namespace FMSoftlab.Collaboration.Mail
             return this;
         }
     }
-
 
     public class HtmlToText
     {
