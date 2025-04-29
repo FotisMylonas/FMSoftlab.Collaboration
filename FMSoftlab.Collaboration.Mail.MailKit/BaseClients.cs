@@ -298,7 +298,7 @@ namespace FMSoftlab.Collaboration.Mail.MailKit
             {
                 string filename = GetProtocolLoggerFilename(ConnectionSettings.LoggerFilename);
                 _log?.LogDebug($"GetAzureSmtpClientAsync, Mailkit, will use protocol logger, file:{filename}");
-                ProtocolLogger pl = new ProtocolLogger(ConnectionSettings.LoggerFilename);
+                ProtocolLogger pl = new ProtocolLogger(filename);
                 client = new SmtpClient(pl);
             }
             else
@@ -321,7 +321,7 @@ namespace FMSoftlab.Collaboration.Mail.MailKit
             {
                 string filename = GetProtocolLoggerFilename(ConnectionSettings.LoggerFilename);
                 _log?.LogDebug($"GetNormalSmtpClientAsync, Mailkit, will use protocol logger, file:{filename}");
-                ProtocolLogger pl = new ProtocolLogger(ConnectionSettings.LoggerFilename);
+                ProtocolLogger pl = new ProtocolLogger(filename);
                 client = new SmtpClient(pl);
             }
             else
