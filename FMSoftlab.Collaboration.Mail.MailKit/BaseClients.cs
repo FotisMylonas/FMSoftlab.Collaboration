@@ -23,6 +23,7 @@ using Azure.Core;
 using FMSoftlab.Collaboration.Mail;
 using Microsoft.Extensions.Logging;
 using FMSoftlab.Logging;
+using System.IO;
 
 namespace FMSoftlab.Collaboration.Mail.MailKit
 {
@@ -277,12 +278,26 @@ namespace FMSoftlab.Collaboration.Mail.MailKit
             await client.AuthenticateAsync(new SaslMechanismOAuth2(Mailbox, authenticationResult.AccessToken));
         }*/
 
+        private string GetProtocolLoggerFilename(string filename)
+        {
+            string res = filename;
+            if (!string.IsNullOrWhiteSpace(filename))
+            {
+                string fileExt = Path.GetExtension(filename);
+                string fileNameWithoutExt = Path.GetFileNameWithoutExtension(filename);
+                res = $@"{fileNameWithoutExt}_{DateTime.Now.ToString("yyyyMMddHHmmssfff")}_{Guid.NewGuid()}{fileExt}";
+                res = Path.Combine(Path.GetDirectoryName(filename), res);
+            }
+            return res;
+        }
+
         public async Task<SmtpClient> GetSmtpClientOAuth2FlowAsync()
         {
             SmtpClient client = null;
             if (!string.IsNullOrWhiteSpace(ConnectionSettings.LoggerFilename))
             {
-                _log?.LogDebug($"GetAzureSmtpClientAsync, Mailkit, will use protocol logger, file:{ConnectionSettings.LoggerFilename}");
+                string filename = GetProtocolLoggerFilename(ConnectionSettings.LoggerFilename);
+                _log?.LogDebug($"GetAzureSmtpClientAsync, Mailkit, will use protocol logger, file:{filename}");
                 ProtocolLogger pl = new ProtocolLogger(ConnectionSettings.LoggerFilename);
                 client = new SmtpClient(pl);
             }
@@ -304,7 +319,8 @@ namespace FMSoftlab.Collaboration.Mail.MailKit
             SmtpClient client = null;
             if (!string.IsNullOrWhiteSpace(ConnectionSettings.LoggerFilename))
             {
-                _log?.LogDebug($"GetNormalSmtpClientAsync, Mailkit, will use protocol logger, file:{ConnectionSettings.LoggerFilename}");
+                string filename = GetProtocolLoggerFilename(ConnectionSettings.LoggerFilename);
+                _log?.LogDebug($"GetNormalSmtpClientAsync, Mailkit, will use protocol logger, file:{filename}");
                 ProtocolLogger pl = new ProtocolLogger(ConnectionSettings.LoggerFilename);
                 client = new SmtpClient(pl);
             }
